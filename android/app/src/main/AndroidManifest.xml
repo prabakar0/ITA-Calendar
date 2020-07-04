@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="itacalendar"
+        android:label="ITA_Calendarr"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
