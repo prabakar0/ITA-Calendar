@@ -4,14 +4,19 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MyApp());
 }
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
 
-class MyApp extends StatelessWidget {
+class _MyAppState extends State<MyApp> {
+  DateTime x = DateTime.now();
   @override
   Widget build(BuildContext context) {
-    var x = DateTime.now();
+
     String month = x.month.toString();
     String weekday = x.weekday.toString();
-    var day = x.day.toInt();
+    int day = x.day.toInt();
     switch (month) {
       case "1":
         {
@@ -92,7 +97,7 @@ class MyApp extends StatelessWidget {
         }
       case "4":
         {
-          weekday = "Thusrsday";
+          weekday = "Thursday";
           break;
         }
       case "5":
@@ -118,9 +123,12 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blueGrey[900],
           centerTitle: false,
           title: Text(
-            month + ' ' + x.day.toString() + '\n' + weekday,
+            month + ' ' + '$day' + '\n' + weekday,
             style: TextStyle(color: Colors.pinkAccent, fontSize: 20),
           ),
+          actions: <Widget>[
+
+          ],
         ),
         body: SafeArea(
           child: Column(
@@ -135,11 +143,11 @@ class MyApp extends StatelessWidget {
               ),
               Center(
                 child: Text('No Plans for Today',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 40.0,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               Text('😀 ',
@@ -162,7 +170,10 @@ class MyApp extends StatelessWidget {
                   color: Colors.pinkAccent,
                   size: 35.0,
                 ),
-                onPressed: () {},
+                onPressed: () {
+
+
+                },
               ),
               IconButton(
                 icon: Icon(
@@ -170,7 +181,9 @@ class MyApp extends StatelessWidget {
                   color: Colors.pinkAccent,
                   size: 35.0,
                 ),
-                onPressed: () {},
+                onPressed: () {
+
+                },
               ),
               IconButton(
                 icon: Icon(
@@ -186,7 +199,10 @@ class MyApp extends StatelessWidget {
                   color: Colors.pinkAccent,
                   size: 35.0,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  x = x.add(Duration  (days:1,hours:0,minutes:0));
+                  setState(() {});
+                },
               ),
               IconButton(
                 icon: Icon(
@@ -203,3 +219,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
