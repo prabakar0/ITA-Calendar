@@ -9,8 +9,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var x = DateTime.now();
-    var month = x.month.toString();
-    var weekday = x.weekday.toString();
+    String month = x.month.toString();
+    String weekday = x.weekday.toString();
     var day = x.day.toInt();
     switch (month) {
       case "1":
@@ -118,8 +118,8 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blueGrey[900],
           centerTitle: false,
           title: Text(
-            month + ' ' + x.day.toString() + '       ' + weekday,
-            style: TextStyle(color: Colors.pinkAccent, fontSize: 35),
+            month + ' ' + x.day.toString() + '\n' + weekday,
+            style: TextStyle(color: Colors.pinkAccent, fontSize: 20),
           ),
         ),
         body: SafeArea(
