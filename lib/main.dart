@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
     var x = DateTime.now();
     var month = x.month.toString();
     var weekday = x.weekday.toString();
+    var day = x.day.toInt();
     switch (month) {
       case "1":
         {
@@ -117,7 +118,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blueGrey[900],
           centerTitle: false,
           title: Text(
-            month + ' ' + x.day.toString() + '               ' + weekday,
+            month + ' ' + x.day.toString() + '       ' + weekday,
             style: TextStyle(color: Colors.pinkAccent, fontSize: 35),
           ),
         ),
