@@ -171,8 +171,8 @@ class _MyAppState extends State<MyApp> {
                   size: 35.0,
                 ),
                 onPressed: () {
-
-
+                  x = DateTime.now();
+                  setState(() {});
                 },
               ),
               IconButton(
@@ -182,7 +182,8 @@ class _MyAppState extends State<MyApp> {
                   size: 35.0,
                 ),
                 onPressed: () {
-
+                  x = x.add(Duration  (days:-1,hours:0,minutes:0));
+                  setState(() {});
                 },
               ),
               IconButton(
