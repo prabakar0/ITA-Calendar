@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,6 +12,37 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   DateTime x = DateTime.now();
+  SpeedDial buildSpeedDial() {
+    return SpeedDial(
+      animatedIcon: AnimatedIcons.add_event,
+      animatedIconTheme: IconThemeData(size: 22.0),
+      backgroundColor: Colors.pinkAccent,
+      // child: Icon(Icons.add),
+      onOpen: () => print('OPENING DIAL'),
+      onClose: () => print('DIAL CLOSED'),
+      visible: true,
+      curve: Curves.bounceIn,
+      children: [
+        SpeedDialChild(
+          child: Icon(Icons.group, color: Colors.white),
+          backgroundColor: Colors.pinkAccent,
+          onTap: () => print('General Task'),
+          label: 'General Task',
+          labelStyle: TextStyle(fontWeight: FontWeight.w500),
+          labelBackgroundColor: Colors.pinkAccent,
+        ),
+        SpeedDialChild(
+          child: Icon(Icons.person, color: Colors.white),
+          backgroundColor: Colors.pinkAccent,
+          onTap: () => print('private task'),
+          label: 'Private Task',
+          labelStyle: TextStyle(fontWeight: FontWeight.w500),
+          labelBackgroundColor: Colors.pinkAccent,
+        ),
+
+      ],
+    );
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -126,9 +158,7 @@ class _MyAppState extends State<MyApp> {
             month + ' ' + '$day' + '\n' + weekday,
             style: TextStyle(color: Colors.pinkAccent, fontSize: 20),
           ),
-          actions: <Widget>[
 
-          ],
         ),
         body: SafeArea(
           child: Column(
@@ -162,7 +192,7 @@ class _MyAppState extends State<MyApp> {
           color: Colors.blueGrey[900],
           child: new Row(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               IconButton(
                 icon: Icon(
@@ -188,14 +218,6 @@ class _MyAppState extends State<MyApp> {
               ),
               IconButton(
                 icon: Icon(
-                  Icons.calendar_today,
-                  color: Colors.pinkAccent,
-                  size: 35.0,
-                ),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(
                   Icons.chevron_right,
                   color: Colors.pinkAccent,
                   size: 35.0,
@@ -207,15 +229,20 @@ class _MyAppState extends State<MyApp> {
               ),
               IconButton(
                 icon: Icon(
-                  Icons.add_circle,
+                  Icons.calendar_today,
                   color: Colors.pinkAccent,
                   size: 35.0,
                 ),
-                onPressed: () {},
+                onPressed: () {
+
+                },
               ),
+
+
             ],
           ),
         ),
+        floatingActionButton: buildSpeedDial(),
       ),
     );
   }
