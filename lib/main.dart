@@ -25,7 +25,8 @@ class _SecondRouteState extends State<SecondRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Route"),
+        title: Text("Table Calendar"),
+        backgroundColor: Colors.pinkAccent,
       ),
       body: Center(
         child: Column(
