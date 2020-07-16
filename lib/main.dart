@@ -1,17 +1,46 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 void main() {
   runApp(MyApp());
 }
+class SecondRoute extends StatefulWidget {
+  @override
+  _SecondRouteState createState() => _SecondRouteState();
+}
+
+class _SecondRouteState extends State<SecondRoute> {
+  CalendarController _controller;
+
+  @override
+  void initState(){
+    super.initState();
+    _controller =   CalendarController();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Route"),
+      ),
+      body: Center(
+        child: TableCalendar(calendarController: _controller,),
+
+        ),
+
+    );
+  }
+}
+
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  DateTime x = DateTime.now();
   SpeedDial buildSpeedDial() {
     return SpeedDial(
       animatedIcon: AnimatedIcons.add_event,
@@ -43,6 +72,11 @@ class _MyAppState extends State<MyApp> {
       ],
     );
   }
+  DateTime x = DateTime.now();
+
+
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -160,32 +194,14 @@ class _MyAppState extends State<MyApp> {
           ),
 
         ),
-        body: SafeArea(
-          child: Column(
-            children: <Widget>[
-              Text(
-                '\n\n\n\n\n\n\n',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w100,
-                ),
-              ),
-              Center(
-                child: Text('No Plans for Today',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 40.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Text('😀 ',
-                  style: TextStyle(
-                    fontSize: 50.0,
-                    fontFamily: 'EmojiOne',
-                  )),
-            ],
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              children: <Widget>[
+
+
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: BottomAppBar(
@@ -234,6 +250,12 @@ class _MyAppState extends State<MyApp> {
                   size: 35.0,
                 ),
                 onPressed: () {
+                  Navigator.pushNamed(context, "SecondRoute");
+
+
+
+
+
 
                 },
               ),
@@ -247,6 +269,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
 
 
 
