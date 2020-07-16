@@ -24,7 +24,7 @@ class _SecondRouteState extends State<SecondRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEBFFFF),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Table Calendar"),
         backgroundColor: Colors.pinkAccent,
