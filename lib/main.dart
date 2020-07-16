@@ -6,6 +6,7 @@ import 'package:table_calendar/table_calendar.dart';
 void main() {
   runApp(MyApp());
 }
+
 class SecondRoute extends StatefulWidget {
   @override
   _SecondRouteState createState() => _SecondRouteState();
@@ -27,7 +28,13 @@ class _SecondRouteState extends State<SecondRoute> {
         title: Text("Second Route"),
       ),
       body: Center(
-        child: TableCalendar(calendarController: _controller,),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            TableCalendar(calendarController: _controller,),
+
+          ],
+        ),
 
         ),
 
@@ -250,7 +257,10 @@ class _MyAppState extends State<MyApp> {
                   size: 35.0,
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, "SecondRoute");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondRoute()),
+                  );
 
 
 
