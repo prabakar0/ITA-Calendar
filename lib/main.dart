@@ -24,15 +24,19 @@ class _SecondRouteState extends State<SecondRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFEBFFFF),
       appBar: AppBar(
         title: Text("Table Calendar"),
         backgroundColor: Colors.pinkAccent,
       ),
       body: Center(
+
         child: Column(
+
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             TableCalendar(calendarController: _controller,),
+
 
           ],
         ),
@@ -59,9 +63,12 @@ class _MyAppState extends State<MyApp> {
       onClose: () => print('DIAL CLOSED'),
       visible: true,
       curve: Curves.bounceIn,
+      overlayColor: Colors.black,
+      overlayOpacity: 0,
       children: [
         SpeedDialChild(
-          child: Icon(Icons.group, color: Colors.white),
+          child: Icon(Icons.group, color: Colors.white,key: UniqueKey(),),
+
           backgroundColor: Colors.pinkAccent,
           onTap: () => print('General Task'),
           label: 'General Task',
