@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
           onTap: () => print('General Task'),
           label: 'General Task',
           labelStyle: TextStyle(fontWeight: FontWeight.w500),
-          labelBackgroundColor: Colors.pinkAccent,
+          labelBackgroundColor: Colors.white,
         ),
         SpeedDialChild(
           child: Icon(Icons.person, color: Colors.white),
@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
           onTap: () => print('private task'),
           label: 'Private Task',
           labelStyle: TextStyle(fontWeight: FontWeight.w500),
-          labelBackgroundColor: Colors.pinkAccent,
+          labelBackgroundColor: Colors.white,
         ),
 
       ],
