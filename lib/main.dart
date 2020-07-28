@@ -4,7 +4,7 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(home:MyApp(),));
 }
 
 class SecondRoute extends StatefulWidget {
@@ -269,13 +269,7 @@ class _MyAppState extends State<MyApp> {
                     context,
                     MaterialPageRoute(builder: (context) => SecondRoute()),
                   );
-
-
-
-
-
-
-                },
+                  },
               ),
 
 
