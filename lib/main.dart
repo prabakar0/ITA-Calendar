@@ -211,12 +211,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: SingleChildScrollView(
           child: SafeArea(
-            child: Column(
-              children: <Widget>[
-
-
-              ],
-            ),
+            
           ),
         ),
         bottomNavigationBar: BottomAppBar(
