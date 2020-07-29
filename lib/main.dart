@@ -27,7 +27,7 @@ class _SecondRouteState extends State<SecondRoute> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Table Calendar"),
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.pinkAccent,
       ),
       body: Center(
 
